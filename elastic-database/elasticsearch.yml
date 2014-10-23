@@ -1,0 +1,3 @@
+path:
+  logs: /azk/elastic-root/elastic-database/data/log
+  data: /azk/elastic-root/elastic-database/data/data
