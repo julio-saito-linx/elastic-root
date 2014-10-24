@@ -103,9 +103,10 @@ systems({
     command: "node app.js",
     mounts: {
       '/azk/#{manifest.dir}'           : path('.'),
-      '/azk/mounts/media/julio/Mp3/'   : path('/media/julio/Mp3'),
-      '/azk/mounts/media/julio/2gb/'   : path('/media/julio/2gb'),
-      '/azk/mounts/media/julio/Files/' : path('/media/julio/Files'),
+      '/azk/mounts/media/julio/Mp3/'   : path('/media/julio/Mp3'),   // ntfs - mounted
+      '/azk/mounts/media/julio/2gb/'   : path('/media/julio/2gb'),   // ntfs - mounted
+      '/azk/mounts/media/julio/Files/' : path('/media/julio/Files'), // ntfs - mounted
+      '/azk/mounts/home/julio/Music'   : path('/home/julio/Music'),  // local
     },
     scalable: {"default": 1},
     http: {
