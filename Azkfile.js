@@ -8,7 +8,7 @@ systems({
     // Dependent systems
     depends: [],
     // More images:  http://images.azk.io
-    image: "saitodisse/ruby-nodejs:0.1",
+    image: { docker: "saitodisse/ruby-nodejs:0.1" },
     // Steps to execute before running instances
     provision: [
       "npm install",
@@ -22,8 +22,8 @@ systems({
     },
     scalable: {"default": 1},
     http: {
-      // 1-player.azk.dev
-      hostname: "#{system.name}.#{azk.default_domain}"
+      // 1-player.dev.azk.io
+      domains: ["#{system.name}.#{azk.default_domain}"],
     },
     envs: {
       // set instances variables
@@ -38,7 +38,7 @@ systems({
     // Dependent systems
     depends: [],
     // More images:  http://images.azk.io
-    image: "saitodisse/ruby-nodejs:0.1",
+    image: { docker: "saitodisse/ruby-nodejs:0.1" },
     // Steps to execute before running instances
     provision: [
       "npm install",
@@ -52,8 +52,8 @@ systems({
     },
     scalable: {"default": 1},
     http: {
-      // 2-elastic-mp3-searcher.azk.dev
-      hostname: "#{system.name}.#{azk.default_domain}"
+      // 2-elastic-mp3-searcher.dev.azk.io
+      domains: ["#{system.name}.#{azk.default_domain}"],
     },
     envs: {
       // set instances variables
@@ -68,7 +68,7 @@ systems({
     // Dependent systems
     depends: [],
     // More images:  http://images.azk.io
-    image: "dockerfile/nodejs",
+    image: { docker: "node" },
     // Steps to execute before running instances
     provision: [
       "npm install",
@@ -82,8 +82,8 @@ systems({
     },
     scalable: {"default": 1},
     http: {
-      // 3-socketServer.azk.dev
-      hostname: "#{system.name}.#{azk.default_domain}"
+      // 3-socketServer.dev.azk.io
+      domains: ["#{system.name}.#{azk.default_domain}"],
     },
     envs: {
       // set instances variables
@@ -94,7 +94,7 @@ systems({
     // Dependent systems
     depends: [],
     // More images:  http://images.azk.io
-    image: "dockerfile/nodejs",
+    image: { docker: "node" },
     // Steps to execute before running instances
     provision: [
       "npm install",
@@ -110,8 +110,8 @@ systems({
     },
     scalable: {"default": 1},
     http: {
-      // 4-mp3Server.azk.dev
-      hostname: "#{system.name}.#{azk.default_domain}"
+      // 4-mp3Server.dev.azk.io
+      domains: ["#{system.name}.#{azk.default_domain}"],
     },
     envs: {
       // set instances variables
@@ -120,7 +120,7 @@ systems({
   },
 
   'elastic-database': {
-    image: "dockerfile/elasticsearch",
+    image: { docker: "dockerfile/elasticsearch" },
     workdir: "/azk/#{manifest.dir}/elastic-database",
     command: "/elasticsearch/bin/elasticsearch -Des.config=/azk/#{manifest.dir}/elastic-database/elasticsearch.yml",
     mounts: {

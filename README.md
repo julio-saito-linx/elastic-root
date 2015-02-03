@@ -12,9 +12,9 @@ azk start
 ```
 
 ### links
-- http://player.azk.dev
-- http://searcher.azk.dev
-- http://socketserver.azk.dev
-- http://mp3server.azk.dev
+- http://player.dev.azk.io
+- http://searcher.dev.azk.io
+- http://socketserver.dev.azk.io
+- http://mp3server.dev.azk.io
 
 see: https://github.com/saitodisse/socket-io-server for more information
